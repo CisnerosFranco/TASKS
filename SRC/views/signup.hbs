@@ -1,0 +1,21 @@
+<main class="container-form-user  flex-row-reverse h-100 p-0 m-0">
+    <img src="undraw_Surveillance_re_8tkl.svg" alt="" class="image-dashboard d-none d-md-block">
+    <div class="form-area mx-md-4">
+        <div class="container-message">
+            {{#if messages.error}}
+            <div class="alert alert-danger m-0 w-100 text-align-center" role="alert">
+                {{messages.error}}
+            </div>
+            {{/if}}
+        </div>
+        <form action="/signup-user" method="POST" class="form-user border p-3 rounded bg-white m-auto shadow">
+            <img src="settings.png" alt="" class="form-head-img">
+            <input type="text" name="name" placeholder="name" class="w-100 p-2 my-3 bg-light border rounded">
+            <input type="email" name="email" placeholder="@gmail.com"
+                class="w-100 p-2 mt-1 mb-3  bg-light border rounded">
+            <input type="password" name="password" placeholder="your password"
+                class="w-100 p-2 mt-1 mb-4 bg-light border rounded">
+            <button type="submit" class="w-100 border-0 p-2 mt-3 bg-success text-light rounded">CREATE USER</button>
+        </form>
+    </div>
+</main>

@@ -1,0 +1,44 @@
+<header class="container-fluid p-0 m-0 bg-dark d-flex align-items-center justify-content-center px-3 shadow-sm">
+    {{#if is_menu}}
+    <span class="material-icons d-md-none" id="menu-task-show">
+        menu
+    </span>
+    {{/if}}
+    <h2 class="d-inline  text-light m-0  ml-3 m-sm-0">{{title}}</h2>
+    <nav class="nav w-100 m-0 mr-sm-3 ">
+        {{#if is_task}}
+        <div class="show-form-task p-0 mr-3 show-form-task">
+            <span class="material-icons">
+                add
+            </span>
+        </div>
+        {{/if}}
+        <div class="show-bar-user" id="show-bar-user">
+            <strong>{{ user.avatar }}</strong>
+        </div>
+    </nav>
+    <div id="bar-user" class="rounded mr-sm-3 p-0 d-none border">
+        <div class="header-bar border-bottom p-2 mx-2 my-0  text-muted bar-user-item">
+            <div class="title">
+                Cuenta
+            </div>
+            <span class="material-icons" id="close-bar-user">
+                clear
+            </span>
+        </div>
+        <div class="main-bar border-bottom mx-2 px-0 pt-3 pb-4 bar-user-item">
+            <div class="container-avatar">
+                <span class="avatar">{{ user.avatar }}</span>
+            </div>
+            <div class="element-user  pl-2 ">
+                <span class="name">{{ user.name }}</span>
+                <span class="email" style="font-size: 14px;">{{ user.email }}</span>
+            </div>
+        </div>
+        <ul class="bar-user-item ">
+            <li><a href="/profile" class="user-item">Ver Perfil</a></li>
+            <li><a href="/logout" class="user-item">Cerrar Sesión</a></li>
+        </ul>
+    </div>
+
+</header>

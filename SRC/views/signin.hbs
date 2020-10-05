@@ -1,0 +1,19 @@
+<main class="container-form-user  p-0 m-0">
+    <img src="undraw_Login_re_4vu2.svg" alt="" class="image-dashboard d-none d-md-block">
+    <div class="form-area mx-md-4 h-100">
+        <div class="container-message">
+            {{#if messages.error}}
+               <div class="alert-danger alert" role="alert">{{ messages.error }}</div>
+            {{/if}}
+        </div>
+        <form action="/signin" method="POST" class="form-user border px-3 rounded bg-white m-auto shadow">
+            <img src="user.png" alt="" class="form-head-img mt-5 mb-4">
+            <input type="email" required  name="email" placeholder="@gmail.com"
+                class="w-100 p-2 mt-3 mb-3  bg-light border rounded">
+            <input type="password" required name="password" placeholder="your password"
+                class="w-100 p-2 mt-2 mb-4 bg-light border rounded">
+            <button type="submit" class="w-100 border-0 p-2 mt-3 bg-primary text-light rounded">LOGIN</button>
+            <a href="/signup-user" class="mt-3 ml-4 align-self-start">Sign up</a>
+        </form>
+    </div>
+</main>

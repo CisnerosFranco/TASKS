@@ -1,0 +1,94 @@
+<section class="main bg-info  board-container m-0 p-0 d-flex">
+    {{#if tasks_error}}
+    {{> error_message }}
+    {{/if}}
+    <div class="task-menu" id="task-menu">
+        <ul class="options-task w-100 p-0">
+            <li class="tablero-item">
+                <span class="material-icons">
+                    dashboard
+                </span>
+                <span>Tareas</span>
+                <span class="d-md-none" id="hidden-task-menu">
+                    <i class="fas fa-times"></i>
+                </span>
+            </li>
+            <div id="slopes-show" class="options-item">
+                <span class="material-icons">
+                    navigate_next
+                </span>
+                Pendiente
+            </div>
+            <div id="inproccess-show" class="options-item">
+                <span class="material-icons">
+                    navigate_next
+                </span>
+                En Proceso
+            </div>
+            <div id="completed-show" class="options-item">
+                <span class="material-icons">
+                    navigate_next
+                </span>
+                Completadas
+            </div>
+        </ul>
+        <button type="button" class="show-form-task mt-4">
+            <span class="material-icons">
+                add
+            </span>
+            New Task
+        </button>
+    </div>
+    <div class="container-task">
+        {{#each tasks}}
+        <div class="card-task d-none {{ state }}" data-state="{{ state }}">
+            <span class="material-icons show-operations">
+                more_vert
+            </span>
+            <div class="operations-card d-none">
+                <a href="/task-delete?board={{board}}&id={{_id}}" class="delete-task operation">DELETE</a>
+                <span class="edit-task operation">EDIT CARD</span>
+            </div>
+            <form action="/update-task" method="POST" class="form-edit p-0 d-none">
+                <textarea name="description" class="border p-1 rounded w-100"></textarea>
+                <select name="state" required class="mt-2 m-2 w-75 border p-1 rounded" style="outline: none;">
+                    <option value="slopes">pendiente</option>
+                    <option value="in-proccess">en proceso</option>
+                    <option value="completed">completada</option>
+                </select>
+                <input type="text" name="board" value="{{board}}" class="d-none">
+                <input type="text"  name="id" value="{{_id}}" class="d-none">
+                <button type="submit"  class="bg-primary border rounded p-2 w-100 text-light m-0">SAVE</button>
+            </form>
+            <div class="card-body">
+                {{ description }}
+            </div>
+            <div class="footer">
+                <span class="m-2">{{ edited }}</span>
+                <span>{{ date }}</span>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    <div id="container-form-task">
+        <div class="row m-0 p-0 w-100">
+            <div
+                class="col-12  col-xs-5 col-sm-7 col-md-5 col-lg-5 col-xl-4 m-0 p-0 m-auto d-flex justify-content-center align-items-start">
+                <form action="/new-task?board={{board}}" method="POST" class="new-task rounded w-100 py-0 m-0 px-2">
+                    <textarea name="description" id="description" class="border-0 rounded w-100 p-2 m-auto" dir="auto"
+                        placeholder="Describa la tarea"></textarea>
+                    <select name="state" id="state" required class="mt-2 mb-3 border p-1 rounded w-100" style="outline: none;">
+                        <option value="slopes">pendiente</option>
+                        <option value="in-proccess">en proceso</option>
+                        <option value="completed">completada</option>
+                    </select>
+                    <button type="submit" class="bg-primary border rounded p-2 w-100 text-light">ENVIAR</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="controll.js"></script>
+<script src="main.js"></script>
+<script src="task_operations.js"></script>

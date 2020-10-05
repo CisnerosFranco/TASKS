@@ -1,0 +1,62 @@
+<section class="main bg-info">
+    {{#if error_msg}}
+    {{> error_message }}
+    {{/if}}
+    <div class="row  m-0 p-0">
+        <div class="col-12 col-sm-6 col-md-5 col-lg-4 col-xl-3 m-0 p-0 ">
+            <aside id="aside-board" class="p-0 m-0">
+                <form id="new-board" action="/new-board" method="POST"
+                    class="bg-white w-100 m-auto w-sm-100 h-100 rounded px-2 d-flex flex-column justify-content-around"
+                    id="new-board">
+                    <input type="text" name="useremail" value="{{user.email}}" class="d-none">
+                    <input type="text" name="title" minlength="3" placeholder="titulo del tablero"
+                        class="w-100 rounded">
+                    <button type="submit" class="border-0 rounded w-100 p-2 bg-primary text-light">CREAR</button>
+                </form>
+            </aside>
+        </div>
+        <div class="col-12 col-sm-12 col-lg-8 col-xl-9 w-100 p-0 m-0">
+            <div class="container-board-card">
+                {{#each boards}}
+                <div class="board-card ">
+                    <span class="material-icons show-operations">
+                        more_vert
+                    </span>
+                    <div class="operations-board d-none">
+                        <a href="/board-delete?user={{useremail}}&board={{_id}}" class="delete-board">DELETE</a>
+                    </div>
+                    <div class="card-header">
+                        {{title}}
+                    </div>
+                    <div class="footer-card">
+                        {{date}}
+                        <a href="/tasks?board={{_id}}"
+                            class="material-icons btn-go border-0 rounded bg-danger text-light">
+                            double_arrow
+                        </a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</section>
+
+<script src="controll.js"></script>
+<script>
+    const showOpt = document.querySelectorAll('.board-card .show-operations');
+    const optBoard = document.querySelectorAll('.board-card .operations-board');
+
+    showOpt.forEach(elem => {
+        elem.onclick = () => {
+            elem.parentNode.children[1].classList.remove('d-none');
+        }
+    })
+
+    optBoard.forEach(elem => {
+        elem.onclick = () => {
+            elem.classList.add('d-none');
+        }
+    })
+
+</script>

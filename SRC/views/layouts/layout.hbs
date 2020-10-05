@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500&display=swap"
+        rel="stylesheet">
+   <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <!-- css styles -->
+    <link rel="stylesheet" href="tasks.css">
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="form-user.css">
+    <title>{{viewtitle}}</title>
+</head>
+
+<body>
+    {{#if is_header}} 
+        {{> header }}
+    {{/if}}
+    {{{ body }}}
+</body>
+
+</html>

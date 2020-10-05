@@ -1,0 +1,283 @@
+.board-container  .task-menu {
+    height: 93vh;
+    flex-grow: 2;
+    width: 250px !important;   
+    padding:  0 0 10px 0 !important;
+    margin: 0 !important;
+    position: relative;
+    flex-shrink: 1;
+    background: rgb(38, 51, 59);
+    box-shadow: rgba(85, 85, 85, 0.3) 5px 0 5px;
+    transition: 0.3s linear;
+    flex-shrink: 0;
+    z-index: 300;
+}
+
+.board-container  .task-menu .tablero-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    color: #e9e9e9;
+    background: rgb(38, 50, 59);
+    border-bottom: 1px solid #ccc4;
+}
+
+.board-container  .task-menu .tablero-item span:nth-child(1) {
+    margin-left: 70px;
+    text-shadow: #4444 0 5px 5px;
+}
+
+.board-container  .task-menu .tablero-item span:nth-child(2) {
+    margin-left: 10px;
+    font-weight: 500;
+}
+
+.board-container  .task-menu .tablero-item span:nth-child(3) {
+    margin-left: 5px;
+    font-weight: 500;
+    position: absolute;
+    right: 15px;
+    background-color: transparent;
+    font-size: 30px;
+    color: #868686;
+    height: 40px;
+    width: 40px;
+    transition: all 0.4s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+
+.board-container  .task-menu .tablero-item span:nth-child(3):hover {
+    background-color: rgb(75, 75, 75);
+}
+
+.board-container  .task-menu .options-task {
+    width: 100%;
+}
+
+.board-container  .task-menu .options-task .options-item {
+    width: 100%;
+    margin: auto;
+    padding: 8px 0;
+    display: flex;
+    align-items: center;
+    font-weight: 400;
+    color: #e9e9e9;
+    cursor: pointer;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(119, 119, 119, 0.288);
+}
+
+.board-container  .task-menu .options-task .options-item span {
+    margin: 0 10px 0 10px;
+    transition: 0.2s ease-in;
+    background-color: none;
+}
+
+.board-container  .task-menu .options-task .options-item:hover {
+    background-color: #a1a1a11c; 
+    opacity: 1;
+}
+
+.board-container .selected-state {
+    background-color:  #a1a1a11c; 
+}
+
+.board-container .selected-state span:nth-child(1) {
+    margin-left: 17px !important;
+    margin-right: 5px !important;
+}
+
+.board-container  .task-menu .show-form-task{
+    border: none;
+    background-color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 5px;
+    border-radius: 3px;
+    margin: auto;
+    color: #ddd;
+    box-shadow: #2228 0 4px 5px;
+    transition: 0.2s linear;
+    outline: none !important;
+    display: none;
+}
+
+.board-container  .task-menu .show-form-task:active {
+    background-color: #888;
+    color: #ddd;
+}
+
+.hidden-menu {
+    transform: translateX(-400px);
+}
+
+
+
+/* CONTAINER TASKS */
+
+.board-container .container-task {
+    height: 93vh;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+    overflow: auto;
+    align-content: flex-start;
+    justify-content: flex-start;
+}
+
+.board-container .container-task .card-task {
+    width: 300px;
+    height: min-content;
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff !important; 
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 3px;
+    position: relative;
+}
+
+.board-container .container-task .card-task .card-body {
+    text-align: left;
+    display: block;
+    min-height: 50px;
+    padding: 0 0 10px 0;
+    height: auto;
+}
+
+.board-container .container-task .card-task .footer {
+    padding: 7px 10px 0 0;
+    font-size: 13px;
+    color: #555;
+    border-top: 1px solid #ccc6;
+    text-align: end;
+}
+
+/* CARD-TASK > OPERATIONS-TASKS*/
+
+.board-container .container-task .card-task .show-operations {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: transparent;
+    padding: 4px;
+    color: rgb(170, 169, 169);
+    display: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.board-container .container-task .card-task:hover > .show-operations {
+    display: inline-block;
+}
+
+.board-container .container-task .card-task .operations-card {
+    position: absolute;
+    background-color: #4446;
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    z-index: 200;
+}
+.board-container .container-task .card-task .operations-card .operation {
+    text-decoration: none;
+    background-color: #bd0c0cee;
+    width: 100px;
+    margin: 5px;
+    border-radius: 4px;
+    color: #f8f8f8;
+    padding: 5px;
+    text-align: center;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+}
+
+.board-container .container-task .card-task .operations-card .operation:nth-child(2) {
+    background-color: #0067bbee;
+}
+
+.board-container .container-task .card-task .operations-card .operation:hover {
+    padding: 7px;
+    box-shadow: #3338 0 4px 5px;
+}
+
+.board-container .container-task .card-task .form-edit {
+    width: 100%;
+    min-height: 100% !important;
+    left: 0;
+    top: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 3;
+}
+
+.board-container .container-task .card-task .form-edit textarea {
+    flex-grow: 2; 
+    outline: none !important;
+    resize: none;
+    height: auto;
+    overflow: visible !important;
+}
+
+.container-form-edit {
+    min-height: 300px !important;
+    height: auto !important;
+    padding: 0 !important;
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+    .board-container  .task-menu {
+        position: absolute !important;
+    }
+    .board-container  .task-menu .show-form-task {
+        display: flex;
+    }
+
+    header .nav .show-form-task {
+        display: none !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .board-container  .task-menu {
+        transform: translateX(0px);
+    }
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

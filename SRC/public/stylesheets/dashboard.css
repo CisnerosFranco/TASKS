@@ -1,0 +1,202 @@
+/* SECTION */
+.main {
+    display: block;
+    min-height: 93vh;
+    height: auto;
+    width: 100%;
+}
+
+/* SECTION > ASIDE */
+
+#aside-board {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    height: 200px;
+    margin: 0 !important; 
+}
+
+
+
+
+/* CONTAINER-BOARD-CARD */
+.container-board-card {
+    min-height: 100% !important;
+    display: flex !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+    align-content: flex-start !important;
+    flex-wrap: wrap;
+    align-content: center;
+    margin: 0 !important;
+    transition: 0.3s ease-in;
+    padding: 10px !important;
+}
+
+
+.board-card {
+    width: 200px;
+    height: 200px;
+    margin: 0 !important;
+    background: rgb(41, 55, 65);
+    margin: 8px 6px !important;
+    border-radius: 4px;
+    overflow: hidden;
+    transition: 0.3s ease-out;
+    cursor: pointer;
+    display: grid;
+    grid-template-rows: 75% 25%;
+    border-radius: 5px !important;
+    position: relative;
+}
+
+.board-card .show-operations {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: rgba(41, 55, 65, 0.671);
+    padding: 4px;
+    color: rgb(189, 189, 189);
+    cursor: pointer;
+    border-radius: 4px;
+    opacity: 0;
+}
+
+.board-card:hover .show-operations {
+    opacity: 1;
+}
+
+.board-card .operations-board {
+    position: absolute;
+    background-color: rgba(44, 44, 44, 0.363);
+    width: 100%;
+    height: 100%;
+    text-align: right;
+    left: 0;
+    top: 0;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    align-content: flex-start;
+    z-index: 200;
+}
+
+.board-card .operations-board .delete-board {
+    text-decoration: none;
+    background-color: #db1414ee;
+    width: 100px;
+    margin: 5px;
+    border-radius: 4px;
+    color: #f8f8f8;
+    padding: 5px;
+    text-align: center;
+    transition: 0.2s ease-out;
+    cursor: pointer;
+    outline: none;
+    border: none;
+}
+
+.board-card .card-header {
+    color: #f8f8f8;
+    background-color: #0000;
+    padding: 10px 8px;
+}
+.board-card:hover {
+    border: none;
+    box-shadow: rgba(19, 19, 19, 0.4) 0 15px 20px;
+}
+
+
+.board-card .footer-card {
+    font-size: 14px;
+    color: #222;
+    background-color: #f3f0f0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.board-card .footer-card .btn-go {
+    text-decoration: none;
+    font-weight: 400;
+    padding: 5px 8px;
+    opacity: 0;
+    transition: 0.2s ease-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-card .footer-card:hover .btn-go {
+    opacity: 1;
+}
+
+
+/* FORM NEW BOARD */
+#new-board {
+    height: 150px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90% !important;
+}
+
+
+#new-board input {
+    outline: none !important;
+    border: none;
+    font-size: 15px;
+}
+
+#new-board input:hover {
+    border-bottom: 1px solid #ccc !important;
+}
+
+.message-dashboard {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    background-color: #4446;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 100px !important;
+    z-index: 300;
+}
+
+.message-dashboard .alert {
+    width: auto;
+    max-width: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.message-dashboard .alert .btn-close {
+    background-color: rgb(243, 1, 1);
+    width: 20px !important;
+    height: 0px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    padding: 10px !important;
+    color: #f8f8f8;
+    border-radius: 50%;
+    font-weight: 700;
+    cursor: pointer;
+    float: right;
+    margin-left: 10px;
+    opacity: 0;
+    transition: 0.2s linear;
+    z-index: 300;
+}
+
+.message-dashboard .alert:hover > .btn-close {
+    opacity: 1;
+}
